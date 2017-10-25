@@ -1,166 +1,1230 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<!-- <meta name ="viewport" content ="initial-scale=1, maximum-scale=3, minimum-scale=1, minimal-ui">-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery饼状图比例分布数据显示代码 - 站长素材</title>
 
-		<title>QT+OpenCV报告</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jsapi.js"></script>
+<script type="text/javascript" src="js/corechart.js"></script>		
+<script type="text/javascript" src="js/jquery.gvChart-1.0.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.ba-resize.min.js"></script>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/sky.css">
+<script type="text/javascript">
+gvChartInit();
+$(document).ready(function(){
+	$('#myTable5').gvChart({
+		chartType: 'PieChart',
+		gvSettings: {
+			vAxis: {title: 'No of players'},
+			hAxis: {title: 'Month'},
+			width: 900,
+			height: 525
+		}
+	});
+});
+</script>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+<script type="text/javascript">
+gvChartInit();
+$(document).ready(function(){
+		$('#myTable1').gvChart({
+			chartType: 'PieChart',
+			gvSettings: {
+			vAxis: {title: 'No of players'},
+			hAxis: {title: 'Month'},
+			width: 900,
+			height: 525
+		}
+	});
+});
+</script>
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-		<script>
-            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-        </script>
-
-
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<!--  第一页  -->
-				<section  data-background="" >
-                    <h2>在Qt中调用OpenCV库</h2>
-                    <p>
-                        李杰
-                        <br>
-                        2017-10
-                    </p>
-                </section>
-
-				<!--  第二页  -->
-				<section>
-					<h3>目录</h3>
-                    <div style="height:10px;"></div>
-                    <p align="left">
-                    	
-                    	<div style="height:13px;">·Qt+OpenCV配置</div>
-                        <br>
-                    	<div style="height:13px;">&nbsp;&nbsp;·Qt的ui界面的实现</div>
-                        <br>
-                    	<div style="height:13px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;·实现基本图像处理算法</div>
-                        <br>
-                    	<div style="height:13px;">·总结&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                    </p>
-				</section>
+</head>
 
 
-				<!--  第三页  -->
-				<section>
-					<!--  第三.1页  -->
-					<section>
-						<h2>Part&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Qt+OpenCV配置</h2>
-					</section>
+<body>
 
-					<!--  第三.2页  -->
-					<section data-background="images/3.jpg">
-						<!-- <img width="800" height="600" src="images/1.png"  border="0" > 
-						<a href="yinxiao527.mp3">Play the sound</a>
-						<object height="100" width="100" data="yinxiao527.mp3" autostart="false"></object>-->
-					</section>
+	<div style="width:700px;margin:0 auto;">
 
-				</section>
+	   <table id='myTable5'>
+			<caption>原创微博分类明细</caption>
+			<thead>
+				<tr>
+					<th></th>
+					<th>美食类</th>
+					<th>教育类</th>
+					<th>生驹里奈</th>
+					<th>购物类</th>
+					<th>美妆类</th>
+					<th>旅游类</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>1200</th>
+					<td>540</td>
+					<td>300</td>
+					<td>150</td>
+					<td>180</td>
+					<td>120</td>
+					<td>180</td>
+				</tr>
+			</tbody>
+		</table>  
 
-				<!--  第四页  -->
-				<section>
-					<section>
-						<h2>Part&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;Qt的ui界面的实现</h2>
-					</section>
-					<section data-background="images/5.jpg">
-					</section>
-				</section>
+	   <table id='myTable1'>
+			<caption>最爱使用表情（使用次数超过5）</caption>
+			<thead>
+				<tr>
+					<th></th>
+					<th>[眼泪]</th>
+					<th>[拜拜]</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>1000</th>
+					<td>450</td>
+					<td>550</td>
+					</tr>
+			</tbody>
+		</table>  
+	
+	</div>	
+	<table id="chartData" align="center" style="width: 1000px; height: 1000px;">
+      <tr>
+        <th align="center">微博中出现次数最多的词语</th><th align="center">次数</th>
+      </tr>
+    <tr style="color:#194E9C">
+        <td width="100" align="center">真的</td><td width="100" align="center">97</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一个</td><td width="100" align="center">83</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">这个</td><td width="100" align="center">72</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">自己</td><td width="100" align="center">66</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">喜欢</td><td width="100" align="center">62</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">现在</td><td width="100" align="center">60</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">没有</td><td width="100" align="center">57</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">什么</td><td width="100" align="center">52</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">这么</td><td width="100" align="center">51</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">还是</td><td width="100" align="center">50</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">觉得</td><td width="100" align="center">47</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">就是</td><td width="100" align="center">44</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">今天</td><td width="100" align="center">44</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">可爱</td><td width="100" align="center">43</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">可以</td><td width="100" align="center">43</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">哈哈哈</td><td width="100" align="center">41</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">这样</td><td width="100" align="center">39</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">终于</td><td width="100" align="center">37</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">已经</td><td width="100" align="center">37</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">居然</td><td width="100" align="center">37</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">简直</td><td width="100" align="center">36</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">为什么</td><td width="100" align="center">31</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">TvT</td><td width="100" align="center">31</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">真是</td><td width="100" align="center">31</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">不要</td><td width="100" align="center">30</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">感觉</td><td width="100" align="center">30</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">开始</td><td width="100" align="center">29</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">老师</td><td width="100" align="center">28</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">最后</td><td width="100" align="center">28</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">虽然</td><td width="100" align="center">28</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">时候</td><td width="100" align="center">28</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">你们</td><td width="100" align="center">28</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">不是</td><td width="100" align="center">27</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">看到</td><td width="100" align="center">27</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">怎么</td><td width="100" align="center">27</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">这种</td><td width="100" align="center">27</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">北京</td><td width="100" align="center">26</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">好吃</td><td width="100" align="center">25</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">还有</td><td width="100" align="center">25</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">开心</td><td width="100" align="center">24</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">以后</td><td width="100" align="center">24</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">南宁</td><td width="100" align="center">24</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">分享</td><td width="100" align="center">23</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一样</td><td width="100" align="center">22</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">大家</td><td width="100" align="center">22</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一直</td><td width="100" align="center">22</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">出来</td><td width="100" align="center">21</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">我们</td><td width="100" align="center">21</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">今晚</td><td width="100" align="center">21</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">希望</td><td width="100" align="center">21</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">知道</td><td width="100" align="center">20</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">第一次</td><td width="100" align="center">19</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">回家</td><td width="100" align="center">19</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">明明</td><td width="100" align="center">19</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">发现</td><td width="100" align="center">19</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一定</td><td width="100" align="center">19</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">果然</td><td width="100" align="center">18</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">不想</td><td width="100" align="center">18</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">好看</td><td width="100" align="center">18</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">啊啊啊</td><td width="100" align="center">18</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">想要</td><td width="100" align="center">17</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">完全</td><td width="100" align="center">17</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">我要</td><td width="100" align="center">17</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一点</td><td width="100" align="center">17</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">不会</td><td width="100" align="center">17</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">因为</td><td width="100" align="center">16</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">结果</td><td width="100" align="center">16</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">好好</td><td width="100" align="center">16</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">不过</td><td width="100" align="center">16</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">学校</td><td width="100" align="center">15</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">然后</td><td width="100" align="center">15</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">只有</td><td width="100" align="center">15</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">小时</td><td width="100" align="center">15</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">努力</td><td width="100" align="center">15</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">而且</td><td width="100" align="center">15</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一起</td><td width="100" align="center">15</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">起来</td><td width="100" align="center">15</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">人大</td><td width="100" align="center">14</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">回到</td><td width="100" align="center">14</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">那么</td><td width="100" align="center">14</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">考试</td><td width="100" align="center">14</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">少年</td><td width="100" align="center">14</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">哈哈哈哈</td><td width="100" align="center">14</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">论文</td><td width="100" align="center">14</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">之前</td><td width="100" align="center">14</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一只</td><td width="100" align="center">14</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">应该</td><td width="100" align="center">13</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">那个</td><td width="100" align="center">13</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">www</td><td width="100" align="center">13</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一下</td><td width="100" align="center">13</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">驹宝</td><td width="100" align="center">13</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">最近</td><td width="100" align="center">13</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">韩国</td><td width="100" align="center">13</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">为了</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">日子</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">舍友</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">只能</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">每次</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">QAQ</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">再也</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">所以</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">回来</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">明天</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">学习</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">加油</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">QvQ</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">家里</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">大概</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">每天</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一天</td><td width="100" align="center">12</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">朋友</td><td width="100" align="center">11</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">好久</td><td width="100" align="center">11</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">超级</td><td width="100" align="center">11</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">歌曲</td><td width="100" align="center">11</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">如果</td><td width="100" align="center">11</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一群</td><td width="100" align="center">11</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">以前</td><td width="100" align="center">11</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">东西</td><td width="100" align="center">11</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">儿子</td><td width="100" align="center">11</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">下去</td><td width="100" align="center">11</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">衣服</td><td width="100" align="center">11</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">顺便</td><td width="100" align="center">11</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">整个</td><td width="100" align="center">11</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">零食</td><td width="100" align="center">11</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">味道</td><td width="100" align="center">11</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">各种</td><td width="100" align="center">10</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">睡觉</td><td width="100" align="center">10</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">世界</td><td width="100" align="center">10</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">好开心</td><td width="100" align="center">10</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">好像</td><td width="100" align="center">10</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">黄致列</td><td width="100" align="center">10</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">音乐</td><td width="100" align="center">10</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">要是</td><td width="100" align="center">10</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">有人</td><td width="100" align="center">10</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">就要</td><td width="100" align="center">10</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">想想</td><td width="100" align="center">10</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">昨天</td><td width="100" align="center">10</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">但是</td><td width="100" align="center">10</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">于是</td><td width="100" align="center">10</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">感谢</td><td width="100" align="center">10</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一次</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">手机</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">表情</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">心情</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">月饼</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">直接</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">刚刚</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">以为</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">看着</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">只是</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">室友</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">别人</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">人生</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">然而</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">两天</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">不错</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">好多</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">感动</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">出门</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">事情</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">问题</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">很多</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">泰国</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">数学</td><td width="100" align="center">9</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">也好</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">机场</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">复习</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">这件</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">10</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">我妈</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">真心</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">昨晚</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">大叔</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">马上</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">回去</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">自然</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">以及</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">剧情</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">那种</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">有点</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一边</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">528</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">我爸</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">虾米</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">所有</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">来自</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">晚安</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">不能</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一张</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">今年</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">wwww</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">两个</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">电影</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">娃娃</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">越来越</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">宿舍</td><td width="100" align="center">8</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">还要</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">军训</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">我弟</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">总是</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">这辈子</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">学期</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">男神</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">故事</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">听到</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">就算</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">德国</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">这里</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">坐在</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">国际</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">中国</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">得到</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">极了</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">穿着</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">可怕</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">遇上</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">明德</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">是不是</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">不到</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">现场</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">唯一</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">生驹</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">大写</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一年</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">初音</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一句</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">原来</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">必须</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">期待</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一场</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">不行</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">他们</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">女子</td><td width="100" align="center">7</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">女孩子</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">愉快</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">boy</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">夏天</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">税收</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">分钟</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">不同</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">活动</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一条</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">性格</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一切</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">毕业</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">下来</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">声音</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">大学</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">漫画</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">大妈</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">青春</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">才能</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">周末</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">几天</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">孩子</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">美好</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">天气</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">妈呀</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">hhhhhh</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">头发</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">应援</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">TnT</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">教室</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">决定</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">变得</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">大白</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">出去</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">人家</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">会计</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">寝室</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">可能</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">不了</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">水果</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">过去</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">时间</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">运营</td><td width="100" align="center">6</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">成功</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">拿到</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">看见</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">生活</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">正好</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">三天</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">金融</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">这些</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">继续</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">绝对</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">裙子</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">醒来</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">说好</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">榴莲</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">国内</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">实在</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">看起来</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">三个</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">难得</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">女生</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">荔枝</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">告诉</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">选拔</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">选择</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">好听</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">黑子</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">付出</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">蛋糕</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">想念</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">30</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">萌萌</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">推荐</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">好帅</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">值得</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">广州</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">制度</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">能量</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">情绪</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">逗比</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">食堂</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">这是</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">突然</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">如何</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一份</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">温柔</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">的话</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">以来</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">半小时</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">来到</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">呵呵</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">地铁</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">旁边</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">心塞</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">瞬间</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一堆</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">长发</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">镜头</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">颜色</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">提前</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">无法</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">本来</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">绝望</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">家伙</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">循环</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">假期</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一半</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">休息</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">广西</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">23333</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">早上</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">如此</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">男人</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">偶像</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一块</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">长得</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">一周</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">小伙伴</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">再见</td><td width="100" align="center">5</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">仿佛</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">三年</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">半个</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">为何</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">改变</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">受不了</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">全部</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">公主</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">佩服</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">收到</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">微博</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">想起</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">真土</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">期末</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">没想到</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">全员</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">午餐</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">熬夜</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">经济</td><td width="100" align="center">4</td>
+      </tr>
+      <tr style="color:#194E9C">
+        <td width="100" align="center">体重</td><td width="100" align="center">4</td>
+      </tr>
+    </table>
 
-				<!--  第五页  -->
-				<section>
-					<section>
-						<h3>Part&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;实现基本图像处理算法</h3>
-					</section>
-					<section  data-background="images/7.png">
-                    	<!-- <h3>简单介绍一下</h3>
-                    	<h3>OpenCV库的使用</h3>-->
-					</section>
-					<section data-background="images/8.jpg">
-					</section>
-					<section data-background="images/24.png">
-					</section>
-					<section data-background="images/21.png">
-					</section>
-					<section data-background="images/10.png">
-						<!-- <h3>简单介绍一下</h3>
-                    	<h3>实验的内容结构</h3>-->
-					</section>
-					<section data-background="images/9.jpg">
-					</section>
-					<section data-background="images/11.png">
-						<!-- <h3>简单介绍一下</h3>
-                    	<h3>在框架加算法的过程</h3>-->
-					</section>
-					<section data-background="images/12.png">
-					</section>
-					<section data-background="images/13.png">
-					</section>
-					<section data-background="images/14.png">
-					</section>
-					<section data-background="images/22.png">
-					</section>
-					<section data-background="images/23.png">
-					</section>
 
-				</section>
-
-				<!--  第六页  -->
-				<section>
-					<section>
-						<h2>Part&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;总结</h2>
-					</section>
-					<section data-background="images/16.png">
-					</section>
-					<section data-background="images/17.png">
-					</section>
-				</section>
-
-				<!--  第七页  -->
-					<section data-background="images/18.png">
-                </section>
-
-			</div>
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-
-				controls:true,
-				progress:true,
-				history:true,
-				center:true,
-
-				transition:"zoom",// default/cube/page/concave/zoom/linear/fade/none
-
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p></p>
+<p><a href="http://sc.chinaz.com/" target="_blank"></a></p>
+</div>
+</body>
 </html>
